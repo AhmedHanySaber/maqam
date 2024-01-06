@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "460099355417",
+    "project_id": "maqam-e74e3",
+    "storage_bucket": "maqam-e74e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460099355417:android:45848d2874f4820439fb88",
+        "android_client_info": {
+          "package_name": "com.example.maqam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1_D5SSzUfZ7bjiU1LYwQepIASL2cTlgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
