@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:maqam/constants.dart';
+import 'package:maqam/data/models/trip_model.dart';
 import 'package:maqam/presantion/widgets/image_view%20widget.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+ final Trip trip;
+  const DetailsScreen({super.key, required this.trip});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class DetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Lake',
+                trip.location,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -31,10 +33,10 @@ class DetailsScreen extends StatelessWidget {
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.35,
                       child: ClipRRect(
-                        child: ImageViwer(
-                          image: ['assets/images/t3.jpg','assets/images/t3.jpg','assets/images/t3.jpg','assets/images/t3.jpg',],
-                        ),
                         borderRadius: BorderRadius.circular(20),
+                        child: ImageViwer(
+                          image: trip.images,
+                        ),
                       ),
                     ),
                   ),
@@ -46,7 +48,7 @@ class DetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
-                  "Redfish Lake",
+                  trip.name,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -67,7 +69,7 @@ class DetailsScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 4),
                         child: Text(
-                          "Idaho",
+                          trip.location,
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.grey,
@@ -82,7 +84,7 @@ class DetailsScreen extends StatelessWidget {
               SizedBox(
                 width: 343,
                 child: Text(
-                  "What is Redfish Lake known for?\nRedfish Lake is the final stop on the longest \nPacific salmon run in North America, which\n requires long-distance swimmers, such as \nSockeye and Chinook Salmon, to travel over \n900 miles upstream to return to their spawning \ngrounds.\nRedfish Lake is an alpine lake in Custer County,\n Idaho, just south of Stanley. It is the largest lake \nwithin the Sawtooth National Recreation Area.",
+                  trip.description,
                   maxLines: 10,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

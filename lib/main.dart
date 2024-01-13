@@ -1,12 +1,18 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:maqam/presantion/screens/all_trips_screeen.dart';
-import 'package:maqam/presantion/screens/details_screen.dart';
-import 'package:maqam/presantion/widgets/all_trips_widget.dart';
+import 'package:maqam/presantion/screens/home_screen.dart';
+import 'package:maqam/presantion/screens/test.dart';
+import 'package:maqam/presantion/screens/trips_screen.dart';
 import 'package:maqam/routes/app_routes.dart';
 
-void main()   {
+import 'firebase_options.dart';
 
+Future<void> main()   async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,8 +25,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: AppRoutes.routes,
-      initialRoute: AppRoutes.loginScreen,
+      // initialRoute: AppRoutes.loginScreen,
 
+home: HomeScreen(),
       
 
     );

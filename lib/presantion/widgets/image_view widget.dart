@@ -10,16 +10,18 @@ class ImageViwer extends StatelessWidget {
 
       body: Center(
         child: ListView.builder(
+          itemCount: image.length,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context, int index) { return Padding(
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
             child: Container(
               height: 300,
               width: MediaQuery.of(context).size.width ,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  'assets/images/t3.jpg',
+                child: Image.network(
+                  image[index],
                   fit: BoxFit.cover,
                 ),
               ),

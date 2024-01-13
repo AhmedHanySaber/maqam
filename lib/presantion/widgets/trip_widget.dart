@@ -43,7 +43,7 @@ class TripWidget1 extends StatelessWidget {
                     color: Colors.white),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
+                  child: Image.network(
                     image,
                     height: 120,
                     width: 161,
@@ -68,18 +68,7 @@ class TripWidget1 extends StatelessWidget {
                     ),
                   ),
 
-                  Icon(
-                    Icons.star,
-                    color: yellow,
-                  ),
-                  const Text(
-                    '4.5',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+
                 ],
               ),
             ),
@@ -146,7 +135,7 @@ class TripWidget2 extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
+                  child: Image.network(
                     image,
                     height:MediaQuery.of(context).size.height*0.11,
                     width: MediaQuery.of(context).size.width * 0.4, // Adjust the percentage as needed
@@ -169,21 +158,7 @@ class TripWidget2 extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(child: Container(
-                    color: Colors.white,
-                  )),
-                  Icon(
-                    Icons.star,
-                    color: yellow,
-                  ),
-                  const Text(
-                    '4.5',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+
                 ],
               ),
             ),

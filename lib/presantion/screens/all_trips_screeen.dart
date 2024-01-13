@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../data/models/trip_model.dart';
 import '../widgets/all_trips_widget.dart';
 import '../widgets/trip_widget.dart';
+import 'details_screen.dart';
 
 class AllTripsScreen extends StatelessWidget {
-  const AllTripsScreen({super.key});
+  final List<Trip> trips;
+  const AllTripsScreen({super.key, required this.trips});
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +28,25 @@ class AllTripsScreen extends StatelessWidget {
             crossAxisSpacing: 9,
             mainAxisSpacing: 10,
           ),
-          itemCount: 60, // Adjust the number of items based on your data
+          itemCount: trips.length, // Adjust the number of items based on your data
           itemBuilder: (context, index) {
+
             return Center(
               child: GestureDetector(
                 onTap: ()
                 {
-                  Navigator.pushNamed(context, '/details_screen');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>DetailsScreen(trip: trips[index]),
+                    ),
+                  );
                 },
 
                 child: TripWidget2(
-                  image: 'assets/images/t3.jpg',
-                  location: 'Cairo',
-                  title: 'Trip $index', // Replace with actual location data
+                  image: trips[index].images[0],
+                  location: trips[index].location,
+                  title: trips[index].name, // Replace with actual location data
                 ),
               ),
             );
