@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:maqam/constants.dart';
 import 'package:maqam/presantion/screens/trips_screen.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -13,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: gray,
         leading: GestureDetector(
           onTap: () {
-            setState(() {
-            });
+            setState(() {});
             Drawer(
               child: ListView(
                 children: [
@@ -65,9 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       backgroundColor: gray,
-
       body: const TripsScreen(),
-
     );
   }
 }

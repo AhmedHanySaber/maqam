@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:maqam/constants.dart';
 import 'package:maqam/data/models/trip_model.dart';
+import 'package:maqam/data/repo/TripRepository.dart';
 import 'package:maqam/presantion/widgets/image_view%20widget.dart';
 
 class DetailsScreen extends StatelessWidget {
- final Trip trip;
+  final Trip trip;
+
   const DetailsScreen({super.key, required this.trip});
 
   @override
@@ -93,8 +95,6 @@ class DetailsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-
             ],
           ),
         ],
@@ -105,7 +105,9 @@ class DetailsScreen extends StatelessWidget {
           vertical: 20,
         ),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () async {
+            await TripRepository().addToCart(trip);
+          },
           child: Text("Booking Now",
               style: TextStyle(
                 fontSize: 20,
@@ -117,7 +119,6 @@ class DetailsScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-
           ),
         ),
       ),

@@ -11,6 +11,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   bool obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -119,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      obscurePassword != obscurePassword;
+                                      obscurePassword = !obscurePassword;
                                     });
                                     print(obscurePassword);
                                   },
@@ -144,9 +145,7 @@ class _SignUpState extends State<SignUp> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.8,
                             child: ElevatedButton(
-                              onPressed: () {
-
-                              },
+                              onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Green,
                                 shape: const RoundedRectangleBorder(
