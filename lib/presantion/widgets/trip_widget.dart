@@ -137,7 +137,7 @@ class TripWidget2 extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   child: Image.network(
                     image,
-                    height:MediaQuery.of(context).size.height*0.11,
+                    height:MediaQuery.of(context).size.height*0.16,
                     width: MediaQuery.of(context).size.width * 0.4, // Adjust the percentage as needed
                     fit: BoxFit.cover,
                   ),
